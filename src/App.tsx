@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from "react-native";
+import ReactNativeButton from './chapter3/ReactNativeButton';
 
 
 const App: React.FC = () => {
   return (
     <View style={styles.container} >
-      <Text style={styles.title}>My First React Native</Text>
+      <ReactNativeButton />
     </View>
   );
 };
