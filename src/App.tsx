@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from "react-native";
-import ReactNativeButton from './chapter3/ReactNativeButton';
+import PropButton from './chapter3/PropButton';
 
 
 const App: React.FC = () => {
   return (
     <View style={styles.container} >
-      <ReactNativeButton />
+      <PropButton title='PropButton'>Children</PropButton>
     </View>
   );
 };

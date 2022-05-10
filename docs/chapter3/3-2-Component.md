@@ -37,3 +37,69 @@ TouchableOpacity와 같은 버튼 역할을 할 수 있지만, 더 다양한 Pre
   <Text>I'm pressable!</Text>
 </Pressable>
 ```
+
+#### 논쟁거리
+
+**주의** React.FC를 이용할 때 defaultProps가 제대로 동작이 되고 있지 않다
+
+- 함수형 Component를 만들 때 ``() => {}`` 형식도 사용가능하고 ``function`` 키워드도 사용가능, 어차피 함수니까
+- 다만 React.FC 타입은 사용을 자제하는것이 좋다고 한다.
+  - React.FC의 장단점
+    - props에 기본적으로 children이 있음
+      - 특정 컴포넌트에서 children이 필요하지 않을 수도 있는데 넣어놨다? 그것도 옵셔널로?
+      - 그냥 children이 필요하다면 prop에 명시하는 것이 좋음
+
+```tsx
+interface GreetingProps {
+  name: string;
+  children: React.ReactNode;
+}
+```
+
+    - 컴포넌트의 defaultProps, propTypes, contextTypes 를 설정 할 때 자동완성이 될 수 있다는 것
+      - React.FC를 이용할 때 defaultProps가 제대로 동작이 되고 있지 않다
+
+```tsx
+interface GreetingsProps = {
+  name: string;
+  mark: string;
+};
+
+const Greetings: React.FC<GreetingsProps> = ({ name, mark }) => (
+  <div>
+    Hello, {name} {mark}
+  </div>
+);
+
+Greetings.defaultProps = {
+  mark: '!'
+};
+
+export default Greetings;
+
+// App.ts
+
+const App: React.FC = () => {
+  return <Greetings name="Hello" />; // 이 부분에서 에러
+  // mark에 값이 없다면서 에러남
+};
+
+export default App;
+
+// Solution
+interface GreetingsProps = {
+  name: string;
+  mark: string;
+};
+
+// 비구조화 할당에서 기본값을 부여해야 됨
+const Greetings: React.FC<GreetingsProps> = ({ name, mark = '!' }) => (
+  <div>
+    Hello, {name} {mark}
+  </div>
+);
+```
+
+
+
+
