@@ -1,13 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from "react-native";
-import PropButton from './chapter3/PropButton';
-
 
 const App: React.FC = () => {
   return (
-    <View style={styles.container} >
-      <PropButton title='PropButton'>Children</PropButton>
-    </View>
+    <View style={styles.container} />
   );
 };
 
@@ -18,9 +14,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#ffffff',
   },
-  title: {
-    fontSize: 30
-  }
 });
 
 export default App;
