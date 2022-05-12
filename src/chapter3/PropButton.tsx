@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from "react-native";
 
 interface Prop {
   title: string;
@@ -33,3 +33,4 @@ const styles = StyleSheet.create<ButtonStyles>({
 });
 
 export default PropButton;
+
