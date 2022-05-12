@@ -3,7 +3,7 @@ import { StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from "react-
 
 type Prop = {
   title: string,
-  onPress: () => {}
+  onPress: () => void
 }
 
 const Button = (prop: Prop) => {
@@ -24,9 +24,9 @@ const styles = StyleSheet.create<Style>({
   container: {
     backgroundColor: '#3498db',
     borderRadius: 15,
-    paddingHorizontal: 15,
-    paddingVertical: 30,
-    marginHorizontal: 10,
+    paddingHorizontal: 30,
+    paddingVertical: 15,
+    marginVertical: 10,
     justifyContent: 'center'
   },
   title: {
@@ -35,3 +35,5 @@ const styles = StyleSheet.create<Style>({
     color: '#fff'
   }
 })
+
+export default Button
