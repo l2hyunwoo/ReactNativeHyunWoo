@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { StyleSheet, Text } from 'react-native'
+import { StyleSheet, Text, TextStyle } from 'react-native'
 import Button from './Button'
 
 const Counter = () => {

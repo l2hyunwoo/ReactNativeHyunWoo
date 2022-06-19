@@ -16,8 +16,8 @@ I am what I learned.
 
 ## Hooks
 
-### [useState]()
-### [useEffect]()
+### [useState](./docs/chapter6/6-1-useState.md)
+### [useEffect](./docs/chapter6/6-2-useEffect.md)
 ### [useRef]()
 ### [useMemo]()
 ### [Custom Hooks]()
