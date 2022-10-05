@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from "react-native";
-import PropButton from './chapter3/PropButton';
-
+import Counter from './chapter6/Counter';
+import Form from './chapter6/Form';
 
 const App: React.FC = () => {
   return (
-    <View style={styles.container} >
-      <PropButton title='PropButton'>Children</PropButton>
+    <View style={styles.container}>
+      <Form />
     </View>
   );
 };
@@ -18,9 +18,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#ffffff',
   },
-  title: {
-    fontSize: 30
-  }
 });
 
 export default App;
